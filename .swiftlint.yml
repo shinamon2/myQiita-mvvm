@@ -1,0 +1,65 @@
+disabled_rules: # rule identifiers to exclude from running
+  - line_length
+  - force_try
+  - trailing_comma
+  - function_parameter_count
+  - cyclomatic_complexity
+  - valid_docs
+  - force_cast
+  - vertical_whitespace
+  - trailing_newline
+  - file_length
+  - nesting
+
+opt_in_rules:
+  - closing_brace           # '}'と')'の間にスペースを例ないこと
+  - explict_init            # init()を明示しないこと
+  - explicit_self           # selfを明示しないこと
+  - empty_string            # 文字列が空文字であるかの判定はisEmptyを使うこと
+  - for_where               # for内の全処理をifで囲まず、whereを使うこと
+  - operator_usage_whitespace         # 演算子を使用する前後にスペース
+  - overridden_super_call             # メソッドを override したら super を呼ぶ
+  - private_outlet                    # @IBOutlet は private にすべし
+  - return_arrow_whitespace           # 戻り値と'->'の間はスペースを入れること
+  - redundant_type_annotation         # 不要な型明示はしないこと
+  - redundant_optional_initialization # オプショナル型をnil代入で明示的初期化しないこと
+  - redundant_string_enum_value       # String型enumは不要な明示的初期化を避けること
+  - toggle_bool                       # bool変数をトグル構文で変更しないこと
+  - unused_optional_binding           # 不要なオプショナル束縛は使わないこと
+  - sorted_imports                    # import をアルファベット順に
+  - yoda_condition                    # 制御構文の条件式は左辺に変数を、右辺に定数を書くこと
+
+included:
+  - myQiita/
+  - myQiita-mvvmTests/
+  - myQiita-mvvmUITests/
+
+excluded: # paths to ignore during linting.
+  - Pods/
+  - Carthage/
+
+line_length: 300
+
+type_body_length:
+  - 400 # warning
+  - 500 # error
+
+function_body_length:
+  - 150 # warning
+  - 200 # error
+
+type_name:
+  max_length: # warning and error
+    warning: 60
+    error: 80
+
+variable_name:
+  min_length: # not possible to disable this partial rule, so set it to zero
+    warning: 0
+    error: 0
+  max_length:
+    warning: 60
+    error: 80
+  excluded:
+    - id
+    - e

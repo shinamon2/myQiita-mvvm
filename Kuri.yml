@@ -1,0 +1,6 @@
+DefaultTemplateDirectoryPath: ./KuriTemplate/
+ProjectRootPath: ./
+ProjectFileName: myQiita.xcodeproj
+GenerateRootPath: ./myQiita/
+Target: myQiita
+ShouldRemoveLayerNameFromDirectory: false
