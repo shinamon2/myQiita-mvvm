@@ -49,6 +49,7 @@
 		E67D4B5B233C58F400F81B87 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67D4B5A233C58F400F81B87 /* HomeViewController.swift */; };
 		E69B0A2223AE266800D5B47C /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69B0A2123AE266800D5B47C /* DateUtil.swift */; };
 		E69B0A2923B26A3E00D5B47C /* ItemWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69B0A2823B26A3E00D5B47C /* ItemWebViewController.swift */; };
+		E69B0A2B23C71E9700D5B47C /* HomeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E69B0A2A23C71E9700D5B47C /* HomeView.storyboard */; };
 		E69E72682328EB8400220A95 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E69E72672328EB8400220A95 /* APIKit.framework */; };
 		E6A17D9B233B0DD500B19048 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A17D9A233B0DD500B19048 /* APIRequest.swift */; };
 		E6A17D9D233B3F9800B19048 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A17D9C233B3F9800B19048 /* AppConfig.swift */; };
@@ -103,6 +104,7 @@
 		E67D4B5A233C58F400F81B87 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E69B0A2123AE266800D5B47C /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		E69B0A2823B26A3E00D5B47C /* ItemWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemWebViewController.swift; sourceTree = "<group>"; };
+		E69B0A2A23C71E9700D5B47C /* HomeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeView.storyboard; sourceTree = "<group>"; };
 		E69E72672328EB8400220A95 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
 		E6A17D7F233AEFA300B19048 /* myQiita-mvvmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "myQiita-mvvmTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6A17D81233AEFA300B19048 /* myQiita_mvvmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myQiita_mvvmTests.swift; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 		E6A17D97233B0B1400B19048 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				E69B0A2A23C71E9700D5B47C /* HomeView.storyboard */,
 				E67D4B5A233C58F400F81B87 /* HomeViewController.swift */,
 				E676ECD82334E931009E7ACE /* HomeViewModel.swift */,
 				E6393EF023604394002E76EB /* HomeViewDataSource.swift */,
@@ -435,6 +438,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E69B0A2B23C71E9700D5B47C /* HomeView.storyboard in Resources */,
 				E60776602300276A00F414D2 /* LaunchScreen.storyboard in Resources */,
 				E6393EEF23602D0D002E76EB /* StockItemTableViewCell.xib in Resources */,
 				E607765D2300276A00F414D2 /* Assets.xcassets in Resources */,
