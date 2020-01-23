@@ -34,17 +34,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Diu-VR-XGq">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6kL-vz-gD4">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6kL-vz-gD4" firstAttribute="top" secondItem="aOh-qS-Il1" secondAttribute="top" id="7QA-qg-OQU"/>
+                            <constraint firstItem="Diu-VR-XGq" firstAttribute="top" secondItem="aOh-qS-Il1" secondAttribute="top" id="CGM-X3-ryY"/>
+                            <constraint firstItem="6kL-vz-gD4" firstAttribute="top" secondItem="Diu-VR-XGq" secondAttribute="bottom" id="Ctd-wD-3bJ"/>
                             <constraint firstItem="aOh-qS-Il1" firstAttribute="bottom" secondItem="6kL-vz-gD4" secondAttribute="bottom" id="WT6-dH-A80"/>
                             <constraint firstItem="6kL-vz-gD4" firstAttribute="leading" secondItem="aOh-qS-Il1" secondAttribute="leading" id="fSu-MY-9Dg"/>
                             <constraint firstItem="aOh-qS-Il1" firstAttribute="trailing" secondItem="6kL-vz-gD4" secondAttribute="trailing" id="i5t-B6-ikr"/>
+                            <constraint firstItem="Diu-VR-XGq" firstAttribute="trailing" secondItem="aOh-qS-Il1" secondAttribute="trailing" id="iaw-8e-jSb"/>
+                            <constraint firstItem="Diu-VR-XGq" firstAttribute="leading" secondItem="aOh-qS-Il1" secondAttribute="leading" id="lKI-Po-mj0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aOh-qS-Il1"/>
                     </view>
@@ -56,7 +63,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k4v-tz-pMT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-351" y="21"/>
+            <point key="canvasLocation" x="-352.17391304347831" y="20.758928571428569"/>
         </scene>
     </scenes>
     <resources>

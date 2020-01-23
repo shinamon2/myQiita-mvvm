@@ -18,17 +18,16 @@ class StockItemTableViewCell: UITableViewCell {
     @IBOutlet private weak var likeCountLabel: UILabel!
     @IBOutlet private weak var tagsStackView: UIStackView!
 
-
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
     func configure(with item: Item) {
-        self.userProfileImage.kf.setImage(with: ImageResource(downloadURL: URL(string: item.user.profileImageUrl)!))
-
-        var userNeme = item.user.name
+        guard let user = item.user else { return }
+        self.userProfileImage.kf.setImage(with: ImageResource(downloadURL: URL(string: user.profileImageUrl)!))
+        var userNeme = user.name
         if userNeme.isEmpty {
-            userNeme = "@" + item.user.id
+            userNeme = "@" + user.id
         }
         self.userNameButton.setTitle(userNeme, for: .normal)
         self.createdAtLavel.text = "が" + item.createdAt.trimAfterT() + "に投稿"
@@ -36,8 +35,8 @@ class StockItemTableViewCell: UITableViewCell {
         self.likeCountLabel.text = String(item.likesCount)
         self.itemTitle.text = item.title
 
-        if item.tags.count <= 0 { tagsStackView.isHidden = true; return }
-        item.tags.forEach { tag in
+        guard let tags = item.tags else { tagsStackView.isHidden = true; return }
+        tags.forEach { tag in
             let label = UILabel()
             label.textColor = UIColor.white
             label.backgroundColor = UIColor.lightGray
