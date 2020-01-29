@@ -7,7 +7,6 @@
 //
 
 import APIKit
-import Foundation
 import Himotoki
 
 protocol APIRequest: Request {
@@ -31,66 +30,5 @@ extension APIRequest {
         }
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         return urlRequest
-    }
-}
-
-// GET /api/v2/tags
-struct GetTags: APIRequest {
-    typealias Response = [Tag]
-
-    var method: HTTPMethod = .get
-    var path: String { return "/api/v2/tags" }
-
-    var page: String    //ページ番号 (1から100まで)
-    var perPage: String //1ページあたりに含まれる要素数 (1から100まで)
-    var sort: String    //並び順 (countで記事数順、nameで名前順)
-    var parameters: Any? {
-        return [
-            "page": page,
-            "per_page": perPage,
-            "sort": sort
-        ]
-    }
-
-    init(page: String, perPage: String, sort: String) {
-        self.page = page
-        self.perPage = perPage
-        self.sort = sort
-    }
-
-    func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        return try decodeValue(object)
-    }
-}
-
-//user_id = AncientBurialMound
-//GET /api/v2/users/:user_id/stocks
-//指定されたユーザがストックした記事一覧を、ストックした日時の降順で返します。
-//https://qiita.com/api/v2/docs#get-apiv2usersuser_idstocks
-struct GetStockItems: APIRequest {
-    typealias Response = [Item]
-
-    var method: HTTPMethod = .get
-    var path: String { return "/api/v2/users/\(userId)/stocks" }
-
-    let userId: String
-    var page: String    //ページ番号 (1から100まで)
-    var perPage: String //1ページあたりに含まれる要素数 (1から100まで)
-
-    var parameters: Any? {
-        return [
-            "page": page,
-            "per_page": perPage
-        ]
-    }
-
-    init(userId: String, page: String, perPage: String) {
-        self.userId = userId
-        self.page = page
-        self.perPage = perPage
-    }
-
-    func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        return try decodeValue(object)
     }
 }
