@@ -10,10 +10,12 @@ import APIKit
 import Himotoki
 
 /** GET /api/v2/users/:user_id/stocks
-*     指定されたユーザがストックした記事一覧を、ストックした日時の降順で返します。
-*     https://qiita.com/api/v2/docs#get-apiv2usersuser_idstocks
-*/
+ *     指定されたユーザがストックした記事一覧を、ストックした日時の降順で返します。
+ *     https://qiita.com/api/v2/docs#get-apiv2usersuser_idstocks
+ */
 struct GetStockItems: APIRequest {
+    var authenticate: Bool = true
+
     typealias Response = [Item]
 
     var method: HTTPMethod = .get

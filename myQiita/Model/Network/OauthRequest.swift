@@ -14,7 +14,9 @@ import Himotoki
  *  https://qiita.com/api/v2/docs#get-apiv2oauthauthorize
  */
 struct GetAuthorize: APIRequest {
-    typealias Response = [Tag]
+    var authenticate: Bool = true
+
+    typealias Response = [String]
 
     var method: HTTPMethod = .get
     var path: String { return "/api/v2/oauth/authorize" }
@@ -23,23 +25,34 @@ struct GetAuthorize: APIRequest {
     ///アプリケーションが利用するスコープをスペース区切りで指定できます
     var scope: String
     ///CSRF対策のため、認可後にリダイレクトするURLのクエリに含まれる値を指定できます
-    var state: String
+    //    var state: String
 
+    var queryParameters: [String: Any]? {
+        return [
+            "client_id": clientId,
+            "scope": scope
+            //            "state": state
+        ]
+    }
     var parameters: Any? {
         return [
             "client_id": clientId,
-            "scope": scope,
-            "state": state
+            "scope": scope
+            //            "state": state
         ]
     }
 
-    init(clientId: String, scope: String, state: String) {
+    init(clientId: String, scope: String) {
         self.clientId = clientId
         self.scope = scope
-        self.state = state
+        //        self.state = state
     }
 
     func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
+        print(object)
+        print(urlResponse)
+
+        //        return urlResponse
         return try decodeValue(object)
     }
 }

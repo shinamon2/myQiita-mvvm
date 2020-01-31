@@ -6,4 +6,6 @@
 //  Copyright © 2020 a.naga. All rights reserved.
 //
 
-import Foundation
+protocol BaseError: Error {
+    var message: String { get }
+}

@@ -10,7 +10,7 @@ import APIKit
 import Himotoki
 
 protocol APIRequest: Request {
-    var authenticate: Bool { get }
+    var authenticate: Bool { get set }
 }
 extension APIRequest {
     var authenticate: Bool { return true }

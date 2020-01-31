@@ -27,6 +27,15 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "E607764F2300276900F414D2"
+            BuildableName = "myQiita-mvvm.app"
+            BlueprintName = "myQiita-mvvm"
+            ReferencedContainer = "container:myQiita-mvvm.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -42,24 +51,13 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E6A17D8C233AEFAE00B19048"
+               BlueprintIdentifier = "E60BECBB23585D1500B5873D"
                BuildableName = "myQiita-mvvmUITests.xctest"
                BlueprintName = "myQiita-mvvmUITests"
                ReferencedContainer = "container:myQiita-mvvm.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E607764F2300276900F414D2"
-            BuildableName = "myQiita-mvvm.app"
-            BlueprintName = "myQiita-mvvm"
-            ReferencedContainer = "container:myQiita-mvvm.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -84,12 +82,10 @@
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "CFNETWORK_DIAGNOSTICS"
-            value = "1"
+            value = "2"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

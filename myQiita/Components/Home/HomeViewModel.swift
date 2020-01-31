@@ -35,16 +35,31 @@ final class HomeViewModel {
 
     func loardStockItems() {
         let request = GetStockItems(userId: "AncientBurialMound", page: "1", perPage: "20")
-
         Session.send(request) { result in
-
             switch result {
-
             case .success(let response):
                 self.stockItems.accept(response)
             case .failure:
-                print("======= api get failure ============")
+                print("======= loardStockItems failure ============")
                 print(result)
+                break
+            }
+        }
+    }
+
+    func loardAuthorize() {
+        var aa = AppConfig.API.Scope.readQiita.rawValue
+        var bbbb = AppConfig.API.clientId
+
+        var request = GetAuthorize(clientId: AppConfig.API.clientId, scope: AppConfig.API.Scope.readQiita.rawValue)
+        //        request.authenticate = false
+        Session.send(request) { result in
+            switch result {
+            case .success(let response):
+                print(response)
+            case .failure(let error):
+                print("======= GetAuthorize failure ============")
+                print(error)
                 break
             }
         }

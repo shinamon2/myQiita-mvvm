@@ -28,8 +28,9 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         dataSource.configure(with: itemListTableView)
-        viewModel.loardTags()
+        //        viewModel.loardTags()
         viewModel.loardStockItems()
+        viewModel.loardAuthorize()
 
         viewModel.tags.asDriver()
             .drive(onNext: { (tags) in
