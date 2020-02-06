@@ -27,10 +27,14 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        bind()
+        setUI()
+
+    }
+
+    private func bind() {
         dataSource.configure(with: itemListTableView)
-        //        viewModel.loardTags()
         viewModel.loardStockItems()
-        viewModel.loardAuthorize()
 
         viewModel.tags.asDriver()
             .drive(onNext: { (tags) in
@@ -53,10 +57,22 @@ class HomeViewController: UIViewController {
         viewModel.showItem
             .bind(onNext: showItem)
             .disposed(by: disposeBag)
+
+    }
+    private func setUI() {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "logout", style: .plain, target: self, action: #selector(tapLogout))
+        self.navigationItem.hidesBackButton = true
     }
 
     private func showItem(url: String) {
         let vc = ItemWebViewController(url: url)
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+
+    @objc private func tapLogout() {
+        UserDataStore.removeApiToken()
+        let storyboard = UIStoryboard(name: "LoginView", bundle: nil)
+        let loginViewController = storyboard.instantiateInitialViewController() as! LoginViewController
+        UIApplication.shared.keyWindow?.rootViewController = UINavigationController(rootViewController: loginViewController)
     }
 }

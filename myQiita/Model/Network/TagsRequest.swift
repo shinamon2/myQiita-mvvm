@@ -14,10 +14,7 @@ import Himotoki
  *     https://qiita.com/api/v2/docs#get-apiv2tags
  */
 struct GetTags: APIRequest {
-    var authenticate: Bool = true
-
     typealias Response = [Tag]
-
     var method: HTTPMethod = .get
     var path: String { return "/api/v2/tags" }
     ///ページ番号 (1から100まで)

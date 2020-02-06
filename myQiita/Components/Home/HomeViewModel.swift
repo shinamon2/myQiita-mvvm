@@ -20,6 +20,7 @@ final class HomeViewModel {
     var showItem = PublishSubject<String>()
 
 
+    //TODO: API確認用
     func loardTags() {
         let request = GetTags(page: "1", perPage: "20", sort: "count")
         Session.send(request) { result in
@@ -46,23 +47,4 @@ final class HomeViewModel {
             }
         }
     }
-
-    func loardAuthorize() {
-        var aa = AppConfig.API.Scope.readQiita.rawValue
-        var bbbb = AppConfig.API.clientId
-
-        var request = GetAuthorize(clientId: AppConfig.API.clientId, scope: AppConfig.API.Scope.readQiita.rawValue)
-        //        request.authenticate = false
-        Session.send(request) { result in
-            switch result {
-            case .success(let response):
-                print(response)
-            case .failure(let error):
-                print("======= GetAuthorize failure ============")
-                print(error)
-                break
-            }
-        }
-    }
-
 }

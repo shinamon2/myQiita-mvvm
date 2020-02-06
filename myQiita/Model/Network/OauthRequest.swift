@@ -14,10 +14,7 @@ import Himotoki
  *  https://qiita.com/api/v2/docs#get-apiv2oauthauthorize
  */
 struct GetAuthorize: APIRequest {
-    var authenticate: Bool = true
-
     typealias Response = [String]
-
     var method: HTTPMethod = .get
     var path: String { return "/api/v2/oauth/authorize" }
     ///登録されたAPIクライアントを特定するためのIDです。40桁の16進数で表現されます

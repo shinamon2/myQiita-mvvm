@@ -9,15 +9,30 @@
 import APIKit
 import Himotoki
 
+/** GET /api/v2/authenticated_user
+ *     アクセストークンに紐付いたユーザを返します。
+ *     https://qiita.com/api/v2/docs#get-apiv2authenticated_user
+ */
+struct GetAuthenticatedUser: APIRequest {
+    typealias Response = User
+    var method: HTTPMethod = .get
+    var path: String { return "/api/v2/authenticated_user" }
+    init(token: String?) {
+        if let token = token {
+            UserDataStore.setApiToken(token: token)
+        }
+    }
+    func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
+        return try decodeValue(object)
+    }
+}
+
 /** GET /api/v2/users/:user_id/stocks
  *     指定されたユーザがストックした記事一覧を、ストックした日時の降順で返します。
  *     https://qiita.com/api/v2/docs#get-apiv2usersuser_idstocks
  */
 struct GetStockItems: APIRequest {
-    var authenticate: Bool = true
-
     typealias Response = [Item]
-
     var method: HTTPMethod = .get
     var path: String { return "/api/v2/users/\(userId)/stocks" }
 
