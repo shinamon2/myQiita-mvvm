@@ -8,32 +8,33 @@
 
 import APIKit
 import Himotoki
+import Realm
+import RealmSwift
 import UIKit
 
-struct User: Himotoki.Decodable {
-    var id: String
-    var name: String
-    var description: String?
-    var profileImageUrl: String
-    var organization: String?
-    var location: String?
-    var websiteUrl: String?
-    var facebookId: String?
-    var linkedinId: String?
-    var githubLoginName: String?
-    var twitterScreenName: String?
-    var followeesCount: Int
-    var followersCount: Int
-    var itemsCount: Int
-    var permanentId: Int
-    var isTeamOnly: Bool
-
+final class User: Object, Himotoki.Decodable {
+    @objc dynamic var id: String = ""
+    @objc dynamic var name: String = ""
+    @objc dynamic var selfIntroduction: String?
+    @objc dynamic var profileImageUrl: String = ""
+    @objc dynamic var organization: String?
+    @objc dynamic var location: String?
+    @objc dynamic var websiteUrl: String?
+    @objc dynamic var facebookId: String?
+    @objc dynamic var linkedinId: String?
+    @objc dynamic var githubLoginName: String?
+    @objc dynamic var twitterScreenName: String?
+    @objc dynamic var followeesCount: Int = 0
+    @objc dynamic var followersCount: Int = 0
+    @objc dynamic var itemsCount: Int = 0
+    @objc dynamic var permanentId: Int = 0
+    @objc dynamic var isTeamOnly: Bool = false
 
     static func decode(_ e: Extractor) throws -> User {
         return try! User(
             id: e <| "id",
             name: e <| "name",
-            description: e <|? "description",
+            selfIntroduction: e <|? "description",
             profileImageUrl: e <| "profile_image_url",
             organization: e <|? "organization",
             location: e <|? "location",
@@ -48,6 +49,32 @@ struct User: Himotoki.Decodable {
             permanentId: e <| "permanent_id",
             isTeamOnly: e <| "team_only"
         )
+    }
+    convenience init(id: String, name: String, selfIntroduction: String?, profileImageUrl: String, organization: String?,
+                     location: String?, websiteUrl: String?, facebookId: String?, linkedinId: String?, githubLoginName: String?,
+                     twitterScreenName: String?, followeesCount: Int, followersCount: Int, itemsCount: Int, permanentId: Int,
+                     isTeamOnly: Bool) {
+        self.init()
+        self.id = id
+        self.name = name
+        self.selfIntroduction = selfIntroduction
+        self.profileImageUrl = profileImageUrl
+        self.organization = organization
+        self.location = location
+        self.websiteUrl = websiteUrl
+        self.facebookId = facebookId
+        self.linkedinId = linkedinId
+        self.githubLoginName = githubLoginName
+        self.twitterScreenName = twitterScreenName
+        self.followeesCount = followeesCount
+        self.followersCount = followersCount
+        self.itemsCount = itemsCount
+        self.permanentId = permanentId
+        self.isTeamOnly = isTeamOnly
+    }
+
+    override static func primaryKey() -> String? {
+        return "id"
     }
 }
 

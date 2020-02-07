@@ -8,14 +8,16 @@
 
 import APIKit
 import Himotoki
+import Realm
+import RealmSwift
 import UIKit
 
-struct Tag: Himotoki.Decodable {
+final class Tag: Object, Himotoki.Decodable {
 
-    var id: String
-    var followersCount: Int
-    var iconUrl: String?
-    var itemsCount: Int
+    @objc dynamic var id: String = ""
+    @objc dynamic var followersCount: Int = 0
+    @objc dynamic var iconUrl: String?
+    @objc dynamic var itemsCount: Int = 0
 
     static func decode(_ e: Extractor) throws -> Tag {
         return try! Tag(
@@ -24,5 +26,17 @@ struct Tag: Himotoki.Decodable {
             iconUrl: e <|? "icon_url",
             itemsCount: e <| "items_count"
         )
+    }
+
+    convenience init(id: String, followersCount: Int, iconUrl: String?, itemsCount: Int) {
+        self.init()
+        self.id = id
+        self.followersCount = followersCount
+        self.iconUrl = iconUrl
+        self.itemsCount = itemsCount
+    }
+
+    override static func primaryKey() -> String? {
+        return "id"
     }
 }

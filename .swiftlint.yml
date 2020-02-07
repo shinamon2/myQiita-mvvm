@@ -1,5 +1,4 @@
 disabled_rules: # rule identifiers to exclude from running
-  - line_length
   - force_try
   - trailing_comma
   - function_parameter_count
@@ -53,10 +52,10 @@ type_name:
     warning: 60
     error: 80
 
-variable_name:
+identifier_name:
   min_length: # not possible to disable this partial rule, so set it to zero
-    warning: 0
-    error: 0
+    warning: 2
+    error: 1
   max_length:
     warning: 60
     error: 80
