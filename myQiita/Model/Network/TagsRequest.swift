@@ -10,12 +10,11 @@ import APIKit
 import Himotoki
 
 /** GET /api/v2/tags
-*     タグ一覧を作成日時の降順で返します
-*     https://qiita.com/api/v2/docs#get-apiv2tags
-*/
+ *     タグ一覧を作成日時の降順で返します
+ *     https://qiita.com/api/v2/docs#get-apiv2tags
+ */
 struct GetTags: APIRequest {
     typealias Response = [Tag]
-
     var method: HTTPMethod = .get
     var path: String { return "/api/v2/tags" }
     ///ページ番号 (1から100まで)

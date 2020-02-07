@@ -15,6 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        checkLogin()
+
         return true
     }
 
@@ -36,3 +39,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
+
+extension AppDelegate {
+
+    func checkLogin() {
+        if !LoginUseCase.haveApiToken() {
+            let storyboard = UIStoryboard(name: "LoginView", bundle: nil)
+            let loginViewController = storyboard.instantiateInitialViewController() as! LoginViewController
+            self.window?.rootViewController = UINavigationController(rootViewController: loginViewController)
+        }
+    }
+}
+
+
