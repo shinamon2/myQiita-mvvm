@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="-1236" y="21"/>
         </scene>
-        <!--First-->
+        <!--Home-->
         <scene sceneID="yCz-2o-t7c">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="jV3-Ti-kdk" customClass="HomeViewController" customModule="myQiita_mvvm" customModuleProvider="target" sceneMemberID="viewController">
@@ -53,7 +53,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aOh-qS-Il1"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="9c4-rP-PkE"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="first" id="9c4-rP-PkE"/>
                     <navigationItem key="navigationItem" id="aiI-a4-TkQ"/>
                     <connections>
                         <outlet property="itemListTableView" destination="6kL-vz-gD4" id="kHH-5Q-qLj"/>

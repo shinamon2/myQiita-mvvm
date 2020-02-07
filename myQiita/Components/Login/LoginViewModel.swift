@@ -44,7 +44,7 @@ class LoginViewModel {
             }
         }
     }
-    
+
     //TODO: API疎通NG
     func loardAuthorize() {
         var aa = AppConfig.API.Scope.readQiita.rawValue

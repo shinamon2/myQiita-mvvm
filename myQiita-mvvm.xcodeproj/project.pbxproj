@@ -61,6 +61,7 @@
 		E6A17D9B233B0DD500B19048 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A17D9A233B0DD500B19048 /* APIRequest.swift */; };
 		E6A17D9D233B3F9800B19048 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A17D9C233B3F9800B19048 /* AppConfig.swift */; };
 		E6A54B0D23EBAE5700F7E9DF /* UserDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A54B0C23EBAE5700F7E9DF /* UserDataStore.swift */; };
+		E6A54B1023ED316800F7E9DF /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A54B0F23ED316800F7E9DF /* MyPageViewController.swift */; };
 		E6C1D4FB230E979600849D69 /* ColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C1D4FA230E979600849D69 /* ColorUtil.swift */; };
 		E6F26F1F23C724A90090CB82 /* StockItemDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F26F1E23C724A90090CB82 /* StockItemDataStore.swift */; };
 /* End PBXBuildFile section */
@@ -132,6 +133,7 @@
 		E6A17D9A233B0DD500B19048 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		E6A17D9C233B3F9800B19048 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		E6A54B0C23EBAE5700F7E9DF /* UserDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataStore.swift; sourceTree = "<group>"; };
+		E6A54B0F23ED316800F7E9DF /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		E6C1D4FA230E979600849D69 /* ColorUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtil.swift; sourceTree = "<group>"; };
 		E6F26F1E23C724A90090CB82 /* StockItemDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockItemDataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -308,6 +310,7 @@
 				E63F475923E4255D007BC454 /* Login */,
 				E6A17D97233B0B1400B19048 /* Home */,
 				E69B0A2523B2699600D5B47C /* Item */,
+				E6A54B0E23ED314100F7E9DF /* MyPage */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -378,6 +381,14 @@
 				E6393EED23602D0D002E76EB /* StockItemTableViewCell.xib */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		E6A54B0E23ED314100F7E9DF /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				E6A54B0F23ED316800F7E9DF /* MyPageViewController.swift */,
+			);
+			path = MyPage;
 			sourceTree = "<group>";
 		};
 		E6C1D4F4230E2E5700849D69 /* Util */ = {
@@ -613,6 +624,7 @@
 				E63F475123DEED7C007BC454 /* OauthRequest.swift in Sources */,
 				E6A17D9D233B3F9800B19048 /* AppConfig.swift in Sources */,
 				E6F26F1F23C724A90090CB82 /* StockItemDataStore.swift in Sources */,
+				E6A54B1023ED316800F7E9DF /* MyPageViewController.swift in Sources */,
 				E63F475323DEEDEE007BC454 /* TagsRequest.swift in Sources */,
 				E65723A1234B427600186C09 /* Tag.swift in Sources */,
 				E63F476A23E481A3007BC454 /* String+Validator.swift in Sources */,
