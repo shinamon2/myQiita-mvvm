@@ -73,6 +73,6 @@ class HomeViewController: UIViewController {
         UserDataStore.removeApiToken()
         let storyboard = UIStoryboard(name: "LoginView", bundle: nil)
         let loginViewController = storyboard.instantiateInitialViewController() as! LoginViewController
-        UIApplication.shared.keyWindow?.rootViewController = UINavigationController(rootViewController: loginViewController)
+        present(loginViewController, animated: true, completion: nil)
     }
 }

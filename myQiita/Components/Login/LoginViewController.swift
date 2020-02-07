@@ -24,8 +24,6 @@ class LoginViewController: UIViewController {
 
         bind()
 
-        //TODO: 確認用　後で消す
-        self.apiTokenTextField.text = "635064edaa6e5673f3f0b7bfa9b701c66503add2"
     }
 
     private func bind() {
@@ -57,15 +55,12 @@ class LoginViewController: UIViewController {
     }
 
     private func showHomeView() {
-        let storyboard = UIStoryboard(name: "HomeView", bundle: nil)
-        let homeViewController = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-
-        if self.navigationController == nil {
-            let navigationController = storyboard.instantiateInitialViewController() as! UINavigationController
-            navigationController.show(homeViewController, sender: true)
-        } else {
-            self.navigationController?.pushViewController(homeViewController, animated: true)
-        }
+        let homeViewController = UIStoryboard(name: "HomeView", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        let myPageViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MyPageViewController") as! MyPageViewController
+        let tabBarController = UITabBarController()
+        let navigationController = UINavigationController(rootViewController: homeViewController)
+        tabBarController.setViewControllers([navigationController, myPageViewController], animated: true)
+        UIApplication.shared.keyWindow?.rootViewController = tabBarController
     }
 }
 
