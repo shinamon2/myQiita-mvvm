@@ -46,7 +46,7 @@ class LoginViewModel {
     }
 
     //TODO: API疎通NG
-    func loardAuthorize() {
+    func loadAuthorize() {
         var aa = AppConfig.API.Scope.readQiita.rawValue
         var bbbb = AppConfig.API.clientId
 

@@ -19,9 +19,23 @@ final class HomeViewModel {
     var stockItems = BehaviorRelay<[Item]>(value: [])
     var showItem = PublishSubject<String>()
 
+    enum HomeViewStatus {
+        case loadSuccess
+        case reLoadSuccess
+        case viewSuccess
+    }
 
+    enum HomeViewError: BaseError {
+        case loadfailure
+        var message: String {
+            switch self {
+            case .loadfailure:
+                return "読み込みに失敗しました"
+            }
+        }
+    }
     //TODO: API確認用
-    func loardTags() {
+    func loadTags() {
         let request = GetTags(page: "1", perPage: "20", sort: "count")
         Session.send(request) { result in
             switch result {
@@ -34,14 +48,14 @@ final class HomeViewModel {
         }
     }
 
-    func loardStockItems() {
-        let request = GetStockItems(userId: "AncientBurialMound", page: "1", perPage: "20")
+    func loadStockItems() {
+        let request = GetStockItems(userId: "AncientBurialMound", page: "1", perPage: "100")
         Session.send(request) { result in
             switch result {
             case .success(let response):
                 self.stockItems.accept(response)
             case .failure:
-                print("======= loardStockItems failure ============")
+                print("======= loadStockItems failure ============")
                 print(result)
                 break
             }

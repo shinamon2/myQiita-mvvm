@@ -26,16 +26,13 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        dataSource.configure(with: itemListTableView)
+        viewModel.loadStockItems()
         bind()
         setUI()
-
     }
 
     private func bind() {
-        dataSource.configure(with: itemListTableView)
-        viewModel.loardStockItems()
-
         viewModel.tags.asDriver()
             .drive(onNext: { (tags) in
                 if tags.count == 0 {return}
