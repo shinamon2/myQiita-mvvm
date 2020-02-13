@@ -6,6 +6,7 @@
 //  Copyright © 2019 a.naga. All rights reserved.
 //
 
+import RealmSwift
 import UIKit
 
 @UIApplicationMain
@@ -15,6 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        let realm = try! Realm()
+        print(realm.configuration.fileURL)
 
         checkLogin()
 

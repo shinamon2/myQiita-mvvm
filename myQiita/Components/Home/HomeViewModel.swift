@@ -52,8 +52,9 @@ final class HomeViewModel {
         let request = GetStockItems(userId: "AncientBurialMound", page: "1", perPage: "100")
         Session.send(request) { result in
             switch result {
-            case .success(let response):
-                self.stockItems.accept(response)
+            case .success(let items):
+                self.stockItems.accept(items)
+                StockItemDataStore.setList(items: items)
             case .failure:
                 print("======= loadStockItems failure ============")
                 print(result)
