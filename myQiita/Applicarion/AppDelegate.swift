@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
 
     func checkLogin() {
-        if !LoginUseCase.haveApiToken() {
+        if !ApiTokenDataStore.haveApiToken() {
             let storyboard = UIStoryboard(name: "LoginView", bundle: nil)
             let loginViewController = storyboard.instantiateInitialViewController() as! LoginViewController
             self.window?.rootViewController = UINavigationController(rootViewController: loginViewController)

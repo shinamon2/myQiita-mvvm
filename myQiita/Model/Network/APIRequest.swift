@@ -17,7 +17,7 @@ extension APIRequest {
     var baseURL: URL { return URL(string: AppConfig.Http.Url.baseString)! }
 
     var accessToken: String? {
-        return UserDataStore.getApiToken()
+        return ApiTokenDataStore.getApiToken()
     }
 
     func intercept(urlRequest: URLRequest) throws -> URLRequest {

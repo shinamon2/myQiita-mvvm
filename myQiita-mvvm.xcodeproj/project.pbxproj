@@ -33,7 +33,6 @@
 		E63F475523DEEE16007BC454 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63F475423DEEE16007BC454 /* UserRequest.swift */; };
 		E63F475723E1972E007BC454 /* OuthRequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63F475623E1972E007BC454 /* OuthRequestTest.swift */; };
 		E63F475E23E425AE007BC454 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63F475A23E425A9007BC454 /* LoginViewController.swift */; };
-		E63F476323E4278A007BC454 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63F476223E4278A007BC454 /* LoginUseCase.swift */; };
 		E63F476423E431D4007BC454 /* LoginView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63F476023E42641007BC454 /* LoginView.storyboard */; };
 		E63F476623E4810F007BC454 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63F476523E4810F007BC454 /* LoginViewModel.swift */; };
 		E63F476923E481A3007BC454 /* View+Radius.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63F476723E481A3007BC454 /* View+Radius.swift */; };
@@ -63,6 +62,7 @@
 		E6A54B0D23EBAE5700F7E9DF /* UserDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A54B0C23EBAE5700F7E9DF /* UserDataStore.swift */; };
 		E6A54B1023ED316800F7E9DF /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A54B0F23ED316800F7E9DF /* MyPageViewController.swift */; };
 		E6C1D4FB230E979600849D69 /* ColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C1D4FA230E979600849D69 /* ColorUtil.swift */; };
+		E6E4256923F56FCB00CFB9A7 /* ApiTokenDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E4256823F56FCB00CFB9A7 /* ApiTokenDataStore.swift */; };
 		E6F26F1F23C724A90090CB82 /* StockItemDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F26F1E23C724A90090CB82 /* StockItemDataStore.swift */; };
 /* End PBXBuildFile section */
 
@@ -115,7 +115,6 @@
 		E63F475623E1972E007BC454 /* OuthRequestTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OuthRequestTest.swift; sourceTree = "<group>"; };
 		E63F475A23E425A9007BC454 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E63F476023E42641007BC454 /* LoginView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginView.storyboard; sourceTree = "<group>"; };
-		E63F476223E4278A007BC454 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
 		E63F476523E4810F007BC454 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E63F476723E481A3007BC454 /* View+Radius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Radius.swift"; sourceTree = "<group>"; };
 		E63F476823E481A3007BC454 /* String+Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Validator.swift"; sourceTree = "<group>"; };
@@ -135,6 +134,7 @@
 		E6A54B0C23EBAE5700F7E9DF /* UserDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataStore.swift; sourceTree = "<group>"; };
 		E6A54B0F23ED316800F7E9DF /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		E6C1D4FA230E979600849D69 /* ColorUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtil.swift; sourceTree = "<group>"; };
+		E6E4256823F56FCB00CFB9A7 /* ApiTokenDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTokenDataStore.swift; sourceTree = "<group>"; };
 		E6F26F1E23C724A90090CB82 /* StockItemDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockItemDataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -209,7 +209,6 @@
 				E6C1D4F5230E2E7600849D69 /* Applicarion */,
 				E67D4B57233C575200F81B87 /* Common */,
 				E67D4B55233C56BE00F81B87 /* Components */,
-				E67D4B56233C56D500F81B87 /* UseCase */,
 				E67D4B59233C584900F81B87 /* Model */,
 				E657239F234B177300186C09 /* Enntity */,
 			);
@@ -315,14 +314,6 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		E67D4B56233C56D500F81B87 /* UseCase */ = {
-			isa = PBXGroup;
-			children = (
-				E63F476223E4278A007BC454 /* LoginUseCase.swift */,
-			);
-			path = UseCase;
-			sourceTree = "<group>";
-		};
 		E67D4B57233C575200F81B87 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,6 +408,7 @@
 			children = (
 				E6F26F1E23C724A90090CB82 /* StockItemDataStore.swift */,
 				E6A54B0C23EBAE5700F7E9DF /* UserDataStore.swift */,
+				E6E4256823F56FCB00CFB9A7 /* ApiTokenDataStore.swift */,
 			);
 			path = DataStore;
 			sourceTree = "<group>";
@@ -621,6 +613,7 @@
 				E6C1D4FB230E979600849D69 /* ColorUtil.swift in Sources */,
 				E63F476623E4810F007BC454 /* LoginViewModel.swift in Sources */,
 				E69B0A2923B26A3E00D5B47C /* ItemWebViewController.swift in Sources */,
+				E6E4256923F56FCB00CFB9A7 /* ApiTokenDataStore.swift in Sources */,
 				E63F475123DEED7C007BC454 /* OauthRequest.swift in Sources */,
 				E6A17D9D233B3F9800B19048 /* AppConfig.swift in Sources */,
 				E6F26F1F23C724A90090CB82 /* StockItemDataStore.swift in Sources */,
@@ -631,7 +624,6 @@
 				E63F475E23E425AE007BC454 /* LoginViewController.swift in Sources */,
 				E666F75923570F0B00FC1C7C /* Item.swift in Sources */,
 				E6393EF123604394002E76EB /* HomeViewDataSource.swift in Sources */,
-				E63F476323E4278A007BC454 /* LoginUseCase.swift in Sources */,
 				E61DF307235F210400219B14 /* User.swift in Sources */,
 				E6A17D9B233B0DD500B19048 /* APIRequest.swift in Sources */,
 				E6393EF5236047A1002E76EB /* NSObjectProtocol.extension.swift in Sources */,
