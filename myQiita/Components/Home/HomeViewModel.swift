@@ -19,11 +19,11 @@ final class HomeViewModel {
     var stockItems = BehaviorRelay<[Item]>(value: [])
     var showItem = PublishSubject<String>()
 
-    enum HomeViewStatus {
-        case loadSuccess
-        case reLoadSuccess
-        case viewSuccess
-    }
+    //    enum HomeViewStatus {
+    //        case loadSuccess
+    //        case reLoadSuccess
+    //        case viewSuccess
+    //    }
 
     enum HomeViewError: BaseError {
         case loadfailure
@@ -43,7 +43,6 @@ final class HomeViewModel {
                 self.tags.accept(response)
             case .failure:
                 print(result)
-                break
             }
         }
     }
@@ -61,5 +60,10 @@ final class HomeViewModel {
                 break
             }
         }
+    }
+
+    func searchItem(text: String) {
+        guard let items = StockItemDataStore.getList(text: text) else { return }
+        stockItems.accept(items)
     }
 }

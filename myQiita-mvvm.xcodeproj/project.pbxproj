@@ -406,9 +406,9 @@
 		E6F26F1C23C723E10090CB82 /* DataStore */ = {
 			isa = PBXGroup;
 			children = (
+				E6E4256823F56FCB00CFB9A7 /* ApiTokenDataStore.swift */,
 				E6F26F1E23C724A90090CB82 /* StockItemDataStore.swift */,
 				E6A54B0C23EBAE5700F7E9DF /* UserDataStore.swift */,
-				E6E4256823F56FCB00CFB9A7 /* ApiTokenDataStore.swift */,
 			);
 			path = DataStore;
 			sourceTree = "<group>";
