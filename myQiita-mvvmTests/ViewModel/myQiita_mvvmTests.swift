@@ -39,15 +39,15 @@
 // Put teardown code here. This method is called after the invocation of each test method in the class.
 //    }
 //
-//    func testLoardTags() {
-//        vm.loardTags()
+//    func testLoadTags() {
+//        vm.loadTags()
 //        resultSubject.asObserver().subscribe(onNext: { any in
 //            let count = any as! Int
 //            XCTAssertGreaterThan(0, count)
 //        }).disposed(by: disposeBag)
 //    }
 //
-//    func testLoardStockItems() {
+//    func testLoadStockItems() {
 //        vm.loardStockItems()
 //        resultSubject.asObserver()
 //            .subscribe(onNext: { any in

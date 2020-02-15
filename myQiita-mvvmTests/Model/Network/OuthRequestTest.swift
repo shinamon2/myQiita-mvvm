@@ -27,7 +27,7 @@ class OuthRequestTest: XCTestCase {
         var scope = AppConfig.API.Scope.readQiita
         print(scope)
 
-        let request = GetAuthorize(clientId: clientId, scope: "read_qiita", state: "")
+        let request = GetAuthorize.init(clientId: clientId, scope: "read_qiita")
         Session.send(request) { result in
             switch result {
             case .success(let response):

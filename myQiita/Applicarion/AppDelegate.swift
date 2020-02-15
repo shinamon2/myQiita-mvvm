@@ -6,6 +6,7 @@
 //  Copyright © 2019 a.naga. All rights reserved.
 //
 
+import RealmSwift
 import UIKit
 
 @UIApplicationMain
@@ -15,6 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        let realm = try! Realm()
+        print(realm.configuration.fileURL)
 
         checkLogin()
 
@@ -43,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
 
     func checkLogin() {
-        if !LoginUseCase.haveApiToken() {
+        if !ApiTokenDataStore.haveApiToken() {
             let storyboard = UIStoryboard(name: "LoginView", bundle: nil)
             let loginViewController = storyboard.instantiateInitialViewController() as! LoginViewController
             self.window?.rootViewController = UINavigationController(rootViewController: loginViewController)

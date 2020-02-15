@@ -57,6 +57,7 @@
                     <navigationItem key="navigationItem" id="aiI-a4-TkQ"/>
                     <connections>
                         <outlet property="itemListTableView" destination="6kL-vz-gD4" id="kHH-5Q-qLj"/>
+                        <outlet property="itemSearchBar" destination="Diu-VR-XGq" id="3hB-Vb-QP1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k4v-tz-pMT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

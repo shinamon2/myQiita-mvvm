@@ -1,15 +1,14 @@
 //
-//  UserDataStore.swift
+//  ApiTokenDataStore.swift
 //  myQiita-mvvm
 //
-//  Created by aimon on 2020/02/06.
+//  Created by aimon on 2020/02/13.
 //  Copyright © 2020 a.naga. All rights reserved.
 //
 
 import Foundation
-import RealmSwift
 
-class UserDataStore {
+class ApiTokenDataStore {
     static let APITOKEN: String = "API_TOKEN"
 
     static func getApiToken() -> String? {
@@ -27,25 +26,10 @@ class UserDataStore {
     }
 
     static func haveApiToken() -> Bool {
-        if UserDefaults.standard.object(forKey: APITOKEN) == nil {
+        if getApiToken() == nil {
             return false
         } else {
             return true
-        }
-    }
-
-    static func getUser() -> User? {
-        let realm = try! Realm()
-        return realm.objects(User.self).last
-    }
-
-    static func setUser(user: User) {
-        let realm = try! Realm()
-        if let oldUser = realm.objects(User.self).last {
-            try! realm.write {
-                realm.delete(oldUser)
-                realm.add(user)
-            }
         }
     }
 }
